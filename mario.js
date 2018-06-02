@@ -1,7 +1,4 @@
 
-printPyramid(5);
-
-
 /*
  * printPyramid
  *
@@ -13,11 +10,20 @@ printPyramid(5);
  *       #####
  *      ######
  */
-function printPyramid(height) {
-    console.log("Uh oh... the pyramid is under construction.");
-    console.log("Check back soon, our developers are hard at work as we speak!");
 
-    // TODO
-    // print that pyramid!
 
+const printPyramid = function(height) {
+    let asterisks = "##";
+    let spaces = "";
+
+    for (let i = 0; i < height; i++) {
+        for (let j = 0; j < height - i; j++) {  //fill spaces per line
+            spaces += " ";
+        }
+        console.log(spaces + asterisks);        //print current line
+        asterisks += "#";                       //add an asterisk
+        spaces = "";                            //reset spaces
+    }
 }
+
+printPyramid(5);
